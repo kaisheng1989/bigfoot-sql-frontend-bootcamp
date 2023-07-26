@@ -14,6 +14,7 @@ function SightingDetails() {
           `http://localhost:3200/sightings/${id}`
         );
         setSightingData(response.data);
+        console.log(sightingData)
       } 
 
     fetchSightingData();
@@ -36,15 +37,17 @@ function SightingDetails() {
               <Card.Body className="fs-6">
                 Date: {sightingData.date}
                 <br />
+                Location: {sightingData.location}
+                <br />
                 Notes: {sightingData.notes}
               </Card.Body>
-            </Card.Body>
+              </Card.Body>
             <Card.Footer className="fs-6">
               Created: {sightingData.createdAt}
               <br />
               Updated: {sightingData.updatedAt}
-              <br/>
-              <br/>
+              <br />
+              <br />
               <Button onClick={handleGoToMain}>Main Page</Button>
             </Card.Footer>
           </Card>

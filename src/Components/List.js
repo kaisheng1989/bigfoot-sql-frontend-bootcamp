@@ -85,6 +85,7 @@ function List() {
               <Card.Title className="fs-6">{item.id}</Card.Title>
               <Card.Body className="fs-6">
                 Date:{item.date} <br />
+                Location:{item.location} <br />
                 <Link to={`/details/${item.id}`}>
                   <Button>More Details</Button>
                 </Link>
@@ -96,7 +97,6 @@ function List() {
               <br />
               Updated: {item.updatedAt}
               <br />
-            
             </Card.Footer>
           </Card>
         );
