@@ -40,16 +40,16 @@ function List() {
      // Display a user-friendly error message here.
    }
  };
-  const editSighting = async (id, updatedSighting) => {
+
+  const deleteSighting = async (id) => {
     try {
-      await axios.put(`http://localhost:3200/sightings/${id}`, updatedSighting);
+      await axios.delete(`http://localhost:3200/sightings/${id}`);
       fetchData();
     } catch (error) {
-      console.error("Error editing sighting:", error);
+      console.error("Error deleting sighting:", error);
       // Display a user-friendly error message here.
     }
   };
-
  
   return (
     <div>
@@ -97,6 +97,9 @@ function List() {
               <br />
               Updated: {item.updatedAt}
               <br />
+              <Button variant="danger" onClick={() => deleteSighting(item.id)}>
+                Delete
+              </Button>
             </Card.Footer>
           </Card>
         );
